@@ -1,0 +1,49 @@
+/* ========================================================================================================
+   MAIN CONTENT
+=========================================================================================================== */
+.preset-container {
+    max-width: 300px;
+}
+
+.aspect-ratio-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.ratio-separator {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.dimensions-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 650px;
+    position: relative;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ========================================================================================================
+   MEDIA QUERIES
+=========================================================================================================== */
+@media (max-width: 768px) {
+    .dimensions-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .control-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

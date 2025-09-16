@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Aspect Ratio Calculator</title>
+    <meta name="title" content="Aspect Ratio Calculator">
+    <meta name="description" content="Instantly calculate aspect ratios and dimensions. Enter a ratio (e.g., 16:9) and a width or height to find the other dimension, or enter both dimensions to get the simplified ratio. The ideal tool for designers, developers, and content creators.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Devilquest">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aspectratio.ct.ws/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aspectratio.ct.ws/">
+    <meta property="og:title" content="Aspect Ratio Calculator">
+    <meta property="og:description" content="Instantly calculate aspect ratios and dimensions. Enter a ratio (e.g., 16:9) and a width or height to find the other dimension, or enter both dimensions to get the simplified ratio. The ideal tool for designers, developers, and content creators.">
+    <meta property="og:image" content="https://aspectratio.ct.ws/images/share-image.png">
+    <meta property="og:site_name" content="Aspect Ratio Calculator">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://aspectratio.ct.ws/">
+    <meta name="twitter:title" content="Aspect Ratio Calculator">
+    <meta name="twitter:description" content="Instantly calculate aspect ratios and dimensions. Enter a ratio (e.g., 16:9) and a width or height to find the other dimension, or enter both dimensions to get the simplified ratio. The ideal tool for designers, developers, and content creators.">
+    <meta name="twitter:image" content="https://aspectratio.ct.ws/images/share-image.png">
+    <meta name="twitter:site" content="@Devilquest666">
+
+    <!-- Additional / Optional -->
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://toolboxhub.ct.ws/cdn/styles/common-styles.css?v=29300846">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Scripts -->
+    <script src="https://toolboxhub.ct.ws/cdn/scripts/common-scripts.js?v=29300846" defer></script>
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="content-wrapper">
+            <header>
+                <a href="https://toolboxhub.ct.ws" class="back-to-hub">
+                    <span class="back-arrow">←</span>
+                    <span class="back-text"> Back to Hub</span>
+                </a>
+                <h1>
+                    <img src="images/logo.png" alt="Logo">
+                    Aspect Ratio Calculator
+                </h1>
+                <p>Maintain perfect proportions for images, videos, and designs</p>
+            </header>
+
+            <main>
+                <div class="section section-background">
+                    <h2 class="section-title">Enter Aspect Ratio and Dimensions</h2>
+
+                    <div class="mt-30 center-block preset-container">
+                        <label>Common Aspect Ratios</label>
+                        <select id="arPreset">
+                            <option value="">Select a preset</option>
+                            <option value="1:1">1:1 (Square)</option>
+                            <option value="4:3">4:3 (Classic TV)</option>
+                            <option value="3:4">3:4 (Vertical Classic)</option>
+                            <option value="16:9">16:9 (HD)</option>
+                            <option value="9:16">9:16 (Vertical HD)</option>
+                            <option value="3:2">3:2 (Photo)</option>
+                            <option value="2:3">2:3 (Vertical Photo)</option>
+                            <option value="2:1">2:1 (Panorama)</option>
+                            <option value="1:2">1:2 (Vertical Panorama)</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-30">
+                        <label>Aspect Ratio</label>
+                        <div class="center-block aspect-ratio-inputs">
+                            <input type="text" id="arWidth" class="mt-10 input-field" placeholder="16" maxlength="5">
+                            <span class="ratio-separator">:</span>
+                            <input type="text" id="arHeight" class="mt-10 input-field" placeholder="9" maxlength="5">
+                        </div>
+                    </div>
+
+                    <div class="mt-30 center-block dimensions-container">
+                        <div>
+                            <label>Width</label>
+                            <input type="text" id="widthInput" class="mt-10 input-field" placeholder="Enter width">
+                        </div>
+                        <div>
+                            <label>Height</label>
+                            <input type="text" id="heightInput" class="mt-10 input-field" placeholder="Enter height">
+                        </div>
+                    </div>
+
+                    <div class="mt-30 control-buttons">
+                        <button id="calculateRatioBtn" class="btn btn-primary" disabled>Calculate Aspect Ratio</button>
+                        <button id="clearAspectBtn" class="btn btn-secondary" disabled>Clear Aspect Ratio</button>
+                        <button id="clearDimensionsBtn" class="btn btn-secondary" disabled>Clear Dimensions</button>
+                    </div>
+                </div>
+
+                <div class="mt-30 section section-emphasis text-center">
+                    <h3 class="section-title">⚙️ How it works</h3>
+
+                    <div class="mt-20 mb-10 label">To find a dimension:</div>
+                    <p class="content-box content-box-formula">New Height = Width · (Aspect Ratio Height / Aspect Ratio Width)</p>
+                    <p class="content-box content-box-formula">New Width = Height · (Aspect Ratio Width / Aspect Ratio Height)</p>
+
+                    <div class="mt-20 mb-10 label">To find the Aspect Ratio:</div>
+                    <p class="content-box content-box-formula">GCD = Greatest Common Divisor(Width, Height)</p>
+                    <p class="content-box content-box-formula">Aspect Ratio = (Width / GCD) : (Height / GCD)</p>
+
+                    <p>Reference: <a class="default-hover" href="https://en.wikipedia.org/wiki/Aspect_ratio_(image)" target="_blank">Wikipedia - Aspect Ratio</a></p>
+                </div>
+
+                <div class="mt-30 section">
+                    <h3 class="section-title text-center">📝 Usage Examples</h3>
+                    <div class="content-box content-box-example">
+                        <strong>Find Dimension (Height):</strong> For a 16:9 ratio, if width is 1920, what is the height?<br>
+                        <div class="ml-15">Aspect Ratio (Width:Height) = 16:9</div>
+                        <div class="ml-15">Width = 1920</div>
+                        <div class="ml-15">Height = 1920 · (9 / 16) = <strong>1080</strong></div>
+                    </div>
+                    <div class="content-box content-box-example">
+                        <strong>Find Dimension (Width):</strong> For a 4:5 ratio, if height is 1080, what is the width?<br>
+                        <div class="ml-15">Aspect Ratio (Width:Height) = 4:5</div>
+                        <div class="ml-15">Height = 1080</div>
+                        <div class="ml-15">Width = 1080 · (4 / 5) = <strong>864</strong></div>
+                    </div>
+                    <div class="content-box content-box-example">
+                        <strong>Find Ratio:</strong> An image is 1920px wide and 1080px high. What is its aspect ratio?<br>
+                        <div class="ml-15">Width = 1920</div>
+                        <div class="ml-15">Height = 1080</div>
+                        <div class="ml-15"><a class="default-hover" href="https://en.wikipedia.org/wiki/Greatest_common_divisor" title="Greatest common divisor">GCD</a> (1920, 1080) = 120</div>
+                        <div class="ml-15">Ratio = (1920 / 120) : (1080 / 120) = <strong>16:9</strong></div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+        <button id="scrollToTopBtn" class="scroll-to-top">^</button>
+    </div>
+    <footer>
+        <p>Made with <span>&hearts;</span> by <a href="https://github.com/Devilquest" target="_blank">Devilquest</a> for true pixel perfectionists</p>
+    </footer>
+</body>
+
+</html>
