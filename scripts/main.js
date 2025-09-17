@@ -188,20 +188,6 @@ class AspectRatioCalculator {
         this.elements.clearAspectBtn.addEventListener('click', () => this.clearAspect());
         this.elements.clearDimensionsBtn.addEventListener('click', () => this.clearDimensions());
 
-        // Scroll to top functionality
-        // const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        // window.addEventListener('scroll', () => {
-        //     if (window.scrollY > 100) {
-        //         scrollToTopBtn.classList.add('show');
-        //     } else {
-        //         scrollToTopBtn.classList.remove('show');
-        //     }
-        // });
-
-        // scrollToTopBtn.addEventListener('click', () => {
-        //     window.scrollTo({ top: 0, behavior: 'smooth' });
-        // });
-
         // Initial state
         document.addEventListener('DOMContentLoaded', () => {
             this.arInputIds.forEach(id => this.elements[id].value = '');
@@ -209,7 +195,6 @@ class AspectRatioCalculator {
             this.elements.clearAspectBtn.disabled = true;
             this.elements.clearDimensionsBtn.disabled = true;
             this.elements.calculateRatioBtn.disabled = true;
-            //this.elements.arPreset.value = '16:9';
             this.handlePresetChange();
         });
     }
